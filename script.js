@@ -125,8 +125,14 @@ var additionalDownloadsPage = document.getElementById(
 var additionalMultilingualism = document.getElementById(
   "additional-multilingualism"
 );
-var noTextImages = document.getElementById("have-text-images-no");
-var yesTextImages = document.getElementById("have-text-images-yes");
+var onePageTextImages = document.getElementById("one-page-text-images");
+var twoPageTextImages = document.getElementById("two-page-text-images");
+var threePageTextImages = document.getElementById("three-page-text-images");
+var fourPageTextImages = document.getElementById("four-page-text-images");
+var fivePageTextImages = document.getElementById("five-page-text-images");
+var noTextImages = document.getElementById("no-text-images");
+
+
 var noDigitizedImages = document.getElementById("digitized-images-no");
 var yesDigitizedImages = document.getElementById("digitized-images-yes");
 var domainNo = document.getElementById("domain-no");
@@ -160,7 +166,23 @@ noTextImages.addEventListener("click", function () {
   updateTotalAmount();
 });
 
-yesTextImages.addEventListener("click", function () {
+onePageTextImages.addEventListener("click", function () {
+  updateTotalAmount();
+});
+
+twoPageTextImages.addEventListener("click", function () {
+  updateTotalAmount();
+});
+
+threePageTextImages.addEventListener("click", function () {
+  updateTotalAmount();
+});
+
+fourPageTextImages.addEventListener("click", function () {
+  updateTotalAmount();
+});
+
+fivePageTextImages.addEventListener("click", function () {
   updateTotalAmount();
 });
 
@@ -368,12 +390,29 @@ function updateTotalAmount() {
   }
 
   if (noTextImages.checked) {
+    amount += 0;
+  }
+
+  if (onePageTextImages.checked) {
     amount += 400;
   }
 
-  if (yesTextImages.checked) {
-    amount += 0;
+   if (twoPageTextImages.checked) {
+    amount += 800;
   }
+
+   if (threePageTextImages.checked) {
+    amount += 1200;
+  }
+
+   if (fourPageTextImages.checked) {
+    amount += 1600;
+  }
+
+   if (fivePageTextImages.checked) {
+    amount += 2000;
+  }
+
 
   if (noDigitizedImages.checked) {
     amount += 2000;
@@ -440,11 +479,11 @@ function updateTotalAmount() {
   }
 
   if (noneedSeo.checked) {
-    amount += 100;
+    amount += 0;
   }
 
   if (yesneedSeo.checked) {
-    amount += 0;
+    amount += 100;
   }
 
   if (yesneedLinkExchange.checked) {
